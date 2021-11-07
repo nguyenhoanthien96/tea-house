@@ -112,6 +112,7 @@
             processing: true,
             serverSide: true,
             ajax: urlemployeeGiftTable,
+            responsive: true,
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'employee_phone', name: 'employee_phone'},
@@ -142,6 +143,7 @@
             processing: true,
             serverSide: true,
             ajax: urlGiftCodeListTable,
+            responsive: true,
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'gift_code', name: 'gift_code'},

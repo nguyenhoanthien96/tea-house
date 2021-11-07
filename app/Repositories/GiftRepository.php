@@ -12,6 +12,9 @@ class GiftRepository
 {
     protected $model;
     const BONUSIPHONERATE = 10; // percent
+    const IPHONERATE = 5; // percent
+    const CURRENCYRATE = 20; // percent
+    const VOUCHERRATE = 40; // percent
     const PRIORSTORE = 1;
 
     /**
@@ -36,9 +39,9 @@ class GiftRepository
     public function getGiftTable($storeId) 
     {
         $rate = [
-            'Iphone' => 5,
-            'Một triệu tiền mặt' => 20,
-            'Vé xem phim' => 40,
+            'Iphone' => self::IPHONERATE,
+            'Một triệu tiền mặt' => self::CURRENCYRATE,
+            'Vé xem phim' => self::VOUCHERRATE,
         ];
 
         if($storeId == self::PRIORSTORE) {
