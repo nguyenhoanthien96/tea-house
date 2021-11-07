@@ -11,7 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix .options({
+        processCssUrls: false,
+    })
+    .sourceMaps()
+    .js('resources/js/app.js', 'public/js')
+    .scripts([
+        'node_modules/datatables.net/js/jquery.dataTables.js',
+        'node_modules/datatables.net-bs5/js/dataTables.bootstrap5.js'
+    ], 'public/js/datatable.js')
+    .styles(['node_modules/datatables.net-bs5/css/dataTables.bootstrap5.css'], 'public/css/datatable.css')
+    .sass('resources/sass/app.scss', 'public/css')
