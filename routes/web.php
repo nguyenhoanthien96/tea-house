@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GiftCodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('gift_event.index'));
 });
+
+
+Route::get('/gift-event', [GiftCodeController::class, 'index'])->name('gift_event.index');
+
+Route::get('/employee-gift', [GiftCodeController::class, 'getEmployeeGift'])->name('employee_gift');
+
+Route::get('/gift-code', [GiftCodeController::class, 'getGiftCode'])->name('gift_code');
+
+Route::post('/gift', [GiftCodeController::class, 'getGift'])->name('get_gift');
